@@ -1,0 +1,48 @@
+  1 if empty(glob('~/.vim/autoload/plug.vim'))                                                                   
+  2   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  3     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  4   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  5 endif
+  6 
+  7 call plug#begin('~/.vim/plugged')
+  8 Plug 'mcmartelle/vim-monokai-bold'
+  9 Plug 'phanviet/vim-monokai-pro'
+ 10 Plug 'sheerun/vim-polyglot'
+ 11 call plug#end()
+ 12 
+ 13 
+ 14 syntax on
+ 15 
+ 16 set termguicolors
+ 17 colorscheme monokai_pro
+ 18 
+ 19 syntax enable
+ 20 set tabstop=4
+ 21 
+ 22 
+ 23 set number
+ 24 set showcmd
+ 25 set cursorline
+ 26 filetype indent on
+ 27 set wildmenu
+ 28 set lazyredraw
+ 29 set showmatch
+ 30 
+ 31 
+ 32 set incsearch
+ 33 set hlsearch
+ 34 
+ 35 nnoremap <leader><space> :nohlsearch<CR>
+ 36 
+ 37 
+ 38 set foldenable
+ 39 set foldlevelstart=10
+ 40 set foldnestmax=10
+ 41 set foldmethod=indent
+ 42 
+ 43 
+ 44 set backup
+ 45 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+ 46 set backupskip=/tmp/*,/private/tmp/*
+ 47 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+ 48 set writebackup
